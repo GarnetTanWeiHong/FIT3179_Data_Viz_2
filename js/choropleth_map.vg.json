@@ -20,8 +20,7 @@
         "fields": ["Internet Users(%)"]
       }
     },
-    {"calculate": "max(datum['Internet Users(%)'], 0)", "as": "Count"},
-    {"filter":"datum['Year'] == '2020'"}
+    {"calculate": "max(datum['Internet Users(%)'], 0)", "as": "Count"}
 
   ],
   "layer": [
