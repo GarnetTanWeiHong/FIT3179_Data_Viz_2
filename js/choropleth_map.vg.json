@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Number of Players in English Premier League in 20-21 Season",
+  "title": "Internet User(%) among Countries in 2020",
   "width": 700,
   "height": 400,
   "background": "lightblue",
   "projection": {"type": "equirectangular"},
   "data": {
-    "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/Homework_9/main/js/ne_110m_admin_0_countries.topojson",
+    "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "transform": [
@@ -14,13 +14,15 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/Homework_9/main/nationality_count.csv"
+          "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/Final.csv"
         },
-        "key": "Nationality",
-        "fields": ["Count of Nationality"]
+        "key": "Entity",
+        "fields": ["Internet Users(%)"]
       }
     },
-    {"calculate": "max(datum['Count of Nationality'], 0)", "as": "Count"}
+    {"calculate": "max(datum['Internet Users(%)'], 0)", "as": "Count"},
+    {"filter":"datum['Year'] == '2020'"}
+
   ],
   "layer": [
     {
@@ -30,9 +32,8 @@
           "field": "Count",
           "type": "quantitative",
           "scale": {
-            "type": "threshold",
-            "domain": [5,10,20,50,100],
-            "range": ["#ffdf99","#fdbe85","#fd8d3c", "#e6550d", "#a63603","#8B0000"]},
+            "type": "linear"
+          },
           "title": "Count"
         },
         "tooltip": [
