@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/internet_usage_2020_only.csv"
+  },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color":"red"
+      },
+      "encoding": {
+        "x": {
+          "field": "Broadband Subscription",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Cellular Subscription",
+          "type": "quantitative"
+        }
+      }
+
+}
