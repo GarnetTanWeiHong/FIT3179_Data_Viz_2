@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title":"The change of Broadband Subscription and Cellullar Subscription",
+  "width":"container",
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/Final.csv"
+  },
+  "transform": [
+    {"calculate": "datum['Year']", "as": "Year"},
+    {"calculate": "datum['Internet Users(%)']", "as": "Internet Users(%)"}
+  ],
+  "params": [
+    {
+      "name": "YearSelection",
+      "value": 2001,
+      "bind": {
+        "input": "range",
+        "min": 2001,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "color": "darkblue"
+      },
+      "encoding": {
+        "x": {
+          "field": "Broadband Subscription",
+          "type": "quantitative",
+          "scale": {"domain": [0, 70]}
+        },
+        "y": {
+          "field": "Cellular Subscription",
+          "type": "quantitative",
+          "scale": {"domain": [0, 200]}
+        },
+        "size": {
+          "field": "Internet Users(%)",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [20, 40, 60, 80, 90],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {
+          "field": "Internet Users(%)",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [20, 40, 60, 80, 90]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "tooltip":[{"field": "Entity"},
+      {"field":"Internet Users(%)"},
+      {"field":"Broadband Subscription"},
+      {"field":"Cellular Subscription"}
+    ]
+      },
+      "transform": [
+        {"filter": "datum['Year'] == YearSelection" },
+        {"filter": "datum['Internet Users(%)'] != 0"},
+        {"filter": "datum['Broadband Subscription'] != 0"},
+        {"filter": "datum['Cellular Subscription'] <= 200"}
+      ]
+      
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "field": "Broadband Subscription",
+          "type": "quantitative",
+          "scale": {"domain": [0, 60]}
+        },
+        "y": {
+          "field": "Cellular Subscription",
+          "type": "quantitative",
+          "scale": {"domain": [0, 200]}
+        }
+      },
+      "transform": [
+        {"filter": "datum['Year'] == YearSelection" },
+        {"filter": "datum['Broadband Subscription'] != 0"},
+        {"filter": "datum['Cellular Subscription'] <= 200"},
+        {"regression": "Cellular Subscription", "on": "Broadband Subscription",
+      "extent": [0,35]}
+      ]
+    }
+  ]
+}

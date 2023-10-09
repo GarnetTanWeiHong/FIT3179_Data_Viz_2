@@ -1,0 +1,87 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple radial chart with embedded data.",
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/data_income_internet.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "Year": "string",
+        "Internet Users(%)": "number",
+        "Broadband Subscription": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum['Code'] == 'Region' "
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal",
+          "axis":{"labelOverlap":true}
+        },
+        "y": {
+          "field": "Internet Users(%)",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          }
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal",
+          "title": "Income Group",
+          "scale": {
+            "domain": [
+              "High income",
+              "Upper middle income",
+              "Middle income",
+              "Lower middle income",
+              "Low and middle income",
+              "Low income"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6c8e9",
+              "#377eb8",
+              "#a65628"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "Entity",
+            "type": "nominal",
+            "title": "Entity"
+          },
+          {
+            "field": "Internet Users(%)",
+            "type": "quantitative",
+            "title": "Percentage of Users",
+            "format": ".4f"
+          }
+        ]
+      }
+    }
+  ]
+}

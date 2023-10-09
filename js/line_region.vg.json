@@ -1,0 +1,114 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/data_geo_region_internet.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "nominal",
+      "axis":{"labelOverlap":true}
+    },
+    "y": {
+      "field": "Internet Users(%)",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Entity",
+      "type": "nominal",
+      "title": "Region",
+      "scale": {
+        "domain": [
+          "East Asia and Pacific",
+          "Europe and Central Asia",
+          "European Union",
+          "Latin America and Caribbean",
+          "Middle East and North Africa",
+          "North America",
+          "South Asia",
+          "Western Sahara"
+        ],
+        "range": [
+          "#0077b3",
+          "#ff9900",
+          "#33cc33",
+          "#e6e600",
+          "#cc0000",
+          "#003300",
+          "#ffff00",
+          "#808080"
+
+        ]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": "line"
+    },
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle"
+      },
+      "encoding": {
+        "opacity": {
+          "condition": {
+            "test": {
+              "param": "hover",
+              "empty": false
+            },
+            "value": 1
+          },
+          "value": 0
+        },
+        "size": {
+          "condition": {
+            "test": {
+              "param": "hover",
+              "empty": false
+            },
+            "value": 48
+          },
+          "value": 100
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year"
+          },
+          {
+            "field": "Entity",
+            "type": "nominal",
+            "title": "Entity"
+          },
+          {
+            "field": "Internet Users(%)",
+            "type": "quantitative",
+            "title": "Percentage of Users",
+            "format": ".4f"
+          }
+        ]
+      }
+    }
+
+  ],
+  "config": {
+    "countTitle": "Count",
+    "axisX": {"titleLimit": 150},
+    "axisY": {
+      "minExtent": 20
+    }
+  }
+}
