@@ -13,28 +13,46 @@
               }
             }
     },
+    "params": [
+        {"name":"CountryOption",
+        "value":"China",
+        "bind":{
+          "input":"select",
+          "options": [
+            "China",
+            "United States"
+            ],
+          "labels": [
+            "China",
+            "United States"
+          ],
+          "name": "Country : "
+        }}
+    
+    ],
+
     "height": 450,
     "transform": [
-      {"filter": "datum.Entity == 'China' "},
+      {"filter": "datum.Entity == CountryOption "},
       {"filter": "datum.Year >1990 "},
-      {"calculate": "datum.Difference/1000000", "as": "Difference"},
-      {"window": [{"op": "sum", "field": "Difference", "as": "sum"}]},
+      {"calculate": "datum.Difference", "as": "difference"},
+      {"window": [{"op": "sum", "field": "difference", "as": "sum"}]},
       {"window": [{"op": "lead", "field": "Year", "as": "lead"}]},
       {
         "calculate": "datum.lead === null ? datum.Year : datum.lead",
         "as": "lead"
       },
       {
-        "calculate": "datum.Year === 2020 ? 0 : datum.sum - datum.Difference",
+        "calculate": "datum.Year === 2020 ? 0 : datum.sum - datum.difference",
         "as": "previous_sum"
       },
       {
-        "calculate": "datum.Year === 2020 ? datum.sum : datum.Difference",
-        "as": "Difference"
+        "calculate": "datum.Year === 2020 ? datum.sum : datum.difference",
+        "as": "difference"
       },
       {
-        "calculate": "(datum.Year !== 1980 && datum.Year !== 2020 && datum.Difference > 0 ? '+' : '') + datum.Difference",
-        "as": "text_Difference"
+        "calculate": "(datum.Year !== 1980 && datum.Year !== 2020 && datum.difference > 0 ? '+' : '') + datum.difference",
+        "as": "text_difference"
       },
       {"calculate": "(datum.sum + datum.previous_sum) / 2", "as": "center"},
       {
@@ -51,7 +69,7 @@
         "field": "Year",
         "type": "ordinal",
         "sort": null,
-        "axis": {"labelAngle": 330, "title": "Months"}
+        "axis": {"labelAngle": 330, "title": "Year"}
       }
     },
     "layer": [
@@ -94,21 +112,35 @@
         "mark": {"type": "text", "dy": -4, "baseline": "bottom", "size": 9},
         "encoding": {
           "y": {"field": "sum_inc", "type": "quantitative"},
-          "text": {"field": "sum_inc", "type": "nominal", "format":".2f"}
-        }
+          "text": {"field": "sum_inc", "type": "nominal", "format": {
+            "condition": [
+              {
+                "test": "datum.sum_inc === 0 ",
+                "value": "f"
+              }
+            ],
+            "value": ".2f"
+          }
+          }
+          
+        
+          }
       },
       {
-        "mark": {"type": "text", "dy": 4, "baseline": "top"},
+        "mark": {"type": "text", "dy": 4, "baseline": "top", "size": 9},
         "encoding": {
           "y": {"field": "sum_dec", "type": "quantitative"},
-          "text": {"field": "sum_dec", "type": "nominal"}
+          "text": {"field": "sum_dec", "type": "nominal"
+        
+        }
         }
       },
       {
         "mark": {"type": "text", "fontWeight": "bold", "baseline": "middle", "fontSize":10},
         "encoding": {
           "y": {"field": "center", "type": "quantitative"},
-          "text": {"field": "text_Difference", "type": "nominal", "format":".2f"},
+          "text": {"field": "text_difference", "type": "nominal", "format": ".2f"},
+          
           "color": {
             "condition": [
               {
