@@ -17,14 +17,11 @@
   "layer": [
     {
       "params": [{
-      "name": "hover",
-      "value": [{"Entity": "High income"}],
-      "select": {
-        "type": "point",
-        "fields": ["Entity"],
-        "on": "pointerover"
-      }
-    }],
+    "name": "industry",
+    "value":{ "Entity":"High income"},
+    "select": {"type": "point", "fields": ["Entity"]},
+    "bind": "legend"
+  }],
       "mark": {"type": "line", "point": true},
       "encoding": {
         "x": {
@@ -60,13 +57,7 @@
             ]
           }
         },
-        "opacity": {
-      "condition": {
-        "param": "hover",
-        "value": 1
-      },
-      "value": 0.2
-    },
+        "opacity": {"condition": {"param": "industry", "value": 1}, "value": 0.2},
         "tooltip": [
           {"field": "Year", "type": "nominal", "title": "Year"},
           {"field": "Entity", "type": "nominal", "title": "Entity"},
