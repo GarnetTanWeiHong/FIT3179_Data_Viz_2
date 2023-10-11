@@ -17,6 +17,9 @@
           "field": "Internet Users(%)",
           "type": "quantitative"
         }
-      }
-
+      },
+      "transform": [
+        {"filter": "datum['Internet Users(%)'] != 0"}
+      ]
 }
+

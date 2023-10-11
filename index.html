@@ -15,6 +15,12 @@
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+
+
+
 
 </head>
 
@@ -22,9 +28,9 @@
   <div class="page">
     <!-- Title -->
     <!-- pure grid group -->
-    <div class="pure-g">
+    <div class="pure-g title"
+      style="display: flex; align-items: center; justify-content: center; height: 4em; padding-top:15px; padding-bottom: 15px;">
       <div class="pure-u-1-1">
-
         <h1 style="text-align: center;">Internet Usage</h1>
       </div>
     </div>
@@ -32,11 +38,14 @@
 
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <p style="text-align: center;">
+        <p style="text-align: justify; font-size: larger;">
           As technology has advanced, the percentage of people using the Internet has increased dramatically.
           The map below shows that the entire world is now considered to have full Internet coverage.
-          In United Arab Emirates, 100% of the citizens have the access to the Internet in 2020.
-          However, it is important to note that the internet penetration rate in Africa is still relatively low compared
+          In <strong style="font-size: 20px;"><em>United Arab Emirates</em></strong>, 100% of the citizens have access
+          to the Internet in 2020.
+          However, it is important to note that the <strong style="font-size: 20px;">internet penetration rate in
+            <em>Africa</em></strong> is
+          still relatively low compared
           to other regions of the world.
         </p>
       </div>
@@ -44,29 +53,20 @@
 
 
 
-
-    <div class="pure-g">
+    <div class="pure-g viz">
       <div class="pure-u-1-1">
         <div id="mapvis" class="vis-container"></div>
       </div>
     </div>
 
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <p style="text-align: center;"> The two line charts show that North America has a significant lead in internet
-          penetration,
-          reaching over 80% coverage in 2016, while other regions have not yet reached this milestone. High-income
-          countries also have a significant advantage in internet penetration compared to other income groups.
-        </p>
-      </div>
-    </div>
 
 
 
 
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <p style="text-align: center; font-weight: bold;">The Growth of Internet Users(%) in term of Region and Income
+        <p style="text-align: center; font-weight: bold; font-size: 25px;">The Growth of Internet Users(%) in term of
+          Region and Income
           Group</p>
       </div>
 
@@ -80,8 +80,32 @@
       </div>
     </div>
 
-    <!-- pure grid group -->
     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p style="text-align: justify; font-size: larger;">
+          <b><em>North America</em></b> has a significant lead in internet penetration, with over <b>80%</b> of the population
+          having access to the internet in 2016. Other regions, such as <b><em>Western Sahara</em></b> and <b><em>South Asia</em></b>,
+          have not yet reached this milestone, with internet penetration rates below <b>40%</b>.
+          <br>
+          Similarly, <b>high-income countries</b> have a significant advantage in internet penetration compared to other
+          income groups, with over <b>90%</b> of the population in high-income countries having access to the internet,
+          compared to just <b>21%</b> of the population in <b>low-income countries</b>.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="pure-g" style="margin-top: 15px;">
+      <div class="pure-u-1-1">
+        <div id="link" class="vis-container"></div>
+        </p>
+      </div>
+    </div>
+
+    <!-- <div class="pure-g" style="margin-top: 15px;">
       <div class="pure-u-1-2">
         <div id="bar" class="vis-container"></div>
       </div>
@@ -89,12 +113,12 @@
       <div class="pure-u-1-2">
         <div id="radia_vis" class="vis-container"></div>
       </div>
-    </div>
+    </div> -->
 
 
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <p style="text-align: center;">
+        <p style="text-align: justify;">
           Moving the slider on the bar chart, we can see that the percentage of internet users has grown rapidly over
           time. However, the radial chart shows that the countries with the highest number of internet users are not the
           same as the countries with the highest percentage of internet users.
@@ -113,7 +137,7 @@
 
 
       <div class="pure-u-1-5">
-        <p style="text-align: left;">
+        <p style="text-align: justify;">
           Cellular subscriptions have grown significantly over the past decade, but at a slower rate than broadband
           subscriptions. This trend is likely to slow down even further in the coming years, due to the increasing
           penetration of broadband and the saturation of the cellular market.
@@ -121,7 +145,8 @@
           <br />
           <br />
           <br />
-          An interesting fact that can observe from the bubble chart, there are more people tends to have more than one cellular subscription. 
+          An interesting fact that can observe from the bubble chart, there are more people tends to have more than one
+          cellular subscription.
         </p>
       </div>
     </div>
@@ -133,12 +158,6 @@
       </div>
     </div>
 
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="link" class="vis-container"></div>
-        </p>
-      </div>
-    </div>
 
     <!-- end pure grid group -->
     <script type="text/javascript">

@@ -74,8 +74,7 @@
       "layer": [
         {"mark": "bar",
       "encoding": {
-        
-        "color": {"field": "Entity", "legend": null}
+        "color": {"field": "Entity", "legend": null,"scale":{"scheme":"set1"}   }
       }
         },
         {
@@ -139,7 +138,7 @@
   "encoding": {
     "theta": {"field": "Noof Internet Users", "type": "quantitative", "stack": true},
     "radius": {"field": "Noof Internet Users", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
-    "color": {"field": "Noof Internet Users", "type": "nominal", "legend": null},
+    "color": {"field": "Noof Internet Users", "type": "nominal", "legend": null, "scale":{"scheme":"spectral-7"}   },
     "tooltip": [
       {"field": "Entity", "type": "nominal", "title": "Country"},
       {

@@ -13,32 +13,29 @@
       }
     }
   },
-  "transform": [
-    {
-      "filter": "datum['Code'] == 'Region' "
-    }
-  ],
+  "transform": [{"filter": "datum['Code'] == 'Region' "}],
   "layer": [
     {
-      "mark": {
-        "type": "line",
-        "point": true
-      },
+      "params": [{
+      "name": "hover",
+      "value": [{"Entity": "High income"}],
+      "select": {
+        "type": "point",
+        "fields": ["Entity"],
+        "on": "pointerover"
+      }
+    }],
+      "mark": {"type": "line", "point": true},
       "encoding": {
         "x": {
           "field": "Year",
           "type": "nominal",
-          "axis":{"labelOverlap":true}
+          "axis": {"labelOverlap": true}
         },
         "y": {
           "field": "Internet Users(%)",
           "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              100
-            ]
-          }
+          "scale": {"domain": [0, 100]}
         },
         "color": {
           "field": "Entity",
@@ -63,17 +60,16 @@
             ]
           }
         },
+        "opacity": {
+      "condition": {
+        "param": "hover",
+        "value": 1
+      },
+      "value": 0.2
+    },
         "tooltip": [
-          {
-            "field": "Year",
-            "type": "nominal",
-            "title": "Year"
-          },
-          {
-            "field": "Entity",
-            "type": "nominal",
-            "title": "Entity"
-          },
+          {"field": "Year", "type": "nominal", "title": "Year"},
+          {"field": "Entity", "type": "nominal", "title": "Entity"},
           {
             "field": "Internet Users(%)",
             "type": "quantitative",
