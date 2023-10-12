@@ -45,6 +45,8 @@
     { 
       "transform": [
         {"filter": "datum['Year'] == YearSelection"},
+        {"filter": "datum['Code'] != 'Region'"},
+
         {
           "window": [{"op": "rank", "as": "ranking"}],
           "sort": [{"field": "Internet Users(%)", "order": "descending"}]
@@ -74,7 +76,56 @@
       "layer": [
         {"mark": "bar",
       "encoding": {
-        "color": {"field": "Entity", "legend": null,"scale":{"scheme":"set1"}   }
+        "color": {"field": "Entity", "legend": null,"scale":
+        {
+          "domain": [
+            "Norway",
+            "Canada",
+            "Republic of Korea (South Korea)",
+            "Switzerland",
+            "New Zealand",
+            "Australia",
+            "Sweden",
+            "San Marino",
+            "Iceland",
+            "Denmark",
+            "Finland",
+            "United Kingdom",
+            "Netherlands",
+            "Liechtenstein",
+            "Faeroe Islands",
+            "Luxembourg",
+            "United Arab Emirates",
+            "Bahrain",
+            "Qatar",
+            "Kuwait",
+            "Saudi Arabia"
+          ],
+          "range": [
+            "#fed766",
+            "#009fb7",
+            "#fe4a49",
+            "#61c0bf",
+            "#f15a5a",
+            "#3caea3",
+            "#f97204",
+            "#a8dadc",
+            "#7209b7",
+            "#ffd60a",
+            "#f4a261",
+            "#577590",
+            "#f8961e",
+            "#2a9d8f",
+            "#a8dadc",
+            "#006466",
+            "#3282b8",
+            "#fefae0",
+            "#cad315",
+            "#ba181b"
+          ]
+        }
+        
+   }
       }
         },
         {
@@ -138,7 +189,32 @@
   "encoding": {
     "theta": {"field": "Noof Internet Users", "type": "quantitative", "stack": true},
     "radius": {"field": "Noof Internet Users", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
-    "color": {"field": "Noof Internet Users", "type": "nominal", "legend": null, "scale":{"scheme":"spectral-7"}   },
+    "color": {"field": "Entity", "type": "nominal", "legend": null, "scale":{
+        "domain": [
+          "United States",
+          "Norway",
+          "Canada",
+          "Republic of Korea",
+          "Switzerland",
+          "New Zealand",
+          "Australia",
+          "Sweden",
+          "San Marino",
+          "Iceland"
+        ],
+        "range": [
+          "#fed766",
+          "#009fb7",
+          "#fe4a49",
+          "#61c0bf",
+          "#f15a5a",
+          "#3caea3",
+          "#f97204",
+          "#a8dadc",
+          "#7209b7",
+          "#ffd60a"
+        ]
+      }  },
     "tooltip": [
       {"field": "Entity", "type": "nominal", "title": "Country"},
       {
@@ -151,13 +227,6 @@
   }
 
   }
-
-
-
-
-
-
-
 ],
 "config": {
   "concat":{"spacing": 75,
