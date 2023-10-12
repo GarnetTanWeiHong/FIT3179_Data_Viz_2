@@ -35,7 +35,7 @@
           "#33cc33",
           "#e6e600",
           "#cc0000",
-          "#003300",
+          "#9900cc",
           "#ffff00",
           "#808080"
 
@@ -45,7 +45,14 @@
   },
   "layer": [
     {
-      "mark": "line"
+      "params": [{
+    "name": "industry",
+    "value":{ "Entity":"North America"},
+    "select": {"type": "point", "fields": ["Entity"]},
+    "bind": "legend"
+  }],
+      "mark": "line",
+      "encoding": {"opacity": {"condition": {"param": "industry", "value": 1}, "value": 0.2}}
     },
     {
       "params": [
