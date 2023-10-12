@@ -27,7 +27,7 @@
   "hconcat":[
   {
   "title": "The Top 10 countries which have the highest Internet Users(%)",
-  "width": "container",
+  "width": 500,
   "height": 330,
   "data": {
     "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/Final.csv",
@@ -55,14 +55,15 @@
       ],
       "encoding": {
         "y": {"field": "Entity", "type": "ordinal", "sort": "-x",
-        "axis":{"titleX":-100}
+        "axis":{"titleX":-100,"titleFontSize":15, "labelFontStyle":"bold"}
+        
         },
         "x": {
           "field": "Internet Users(%)",
           "type": "quantitative",
         
           "scale": {"domain": [0, 109.99]},
-          "axis":{"labelOverlap": true, "labelSeparation": 10}
+          "axis":{"labelOverlap": true, "labelSeparation": 10, "titleFontSize": 15}
         },
         "tooltip": [
           {"field": "Entity", "type": "nominal", "title": "Country"},
@@ -171,7 +172,7 @@
 
 },
 {
-  "width":"container",
+  "width": 500,
   "height":330,
   "title": "The Top Nth Highest Number of Internet User",
   "data": {
@@ -203,7 +204,7 @@
     "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
     },
     {
-    "mark": {"type": "text", "radiusOffset": 25, "angle":315, "dx":15},
+    "mark": {"type": "text", "radiusOffset": 25, "angle":0, "dx":0, "fontSize": 12, "fontStyle":"bold"},
     "encoding": {
       "text": {"field": "Entity", "type": "nominal"}
     }
@@ -296,7 +297,8 @@
   }
 ],
 "config": {
-  "concat":{"spacing": 75,
-"columns": 2}
+  "concat":{"spacing": 0,
+"columns": 2},
+"title": {"fontSize":15}
 }
 }

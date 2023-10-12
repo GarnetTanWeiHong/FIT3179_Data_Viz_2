@@ -31,7 +31,7 @@
     
     ],
 
-    "height": 450,
+    "height": 500,
     "transform": [
       {"filter": "datum.Entity == CountryOption "},
       {"filter": "datum.Year >1990 "},
@@ -69,7 +69,7 @@
         "field": "Year",
         "type": "ordinal",
         "sort": null,
-        "axis": {"labelAngle": 330, "title": "Year"}
+        "axis": {"labelAngle": 330, "title": "Year",  "titleFontSize":15, "labelFontStyle":"bold"}
       }
     },
     "layer": [
@@ -79,7 +79,8 @@
           "y": {
             "field": "previous_sum",
             "type": "quantitative",
-            "title": "Amount (million)"
+            "title": "Amount (million)",
+            "axis":{ "titleFontSize":15, "labelFontStyle":"bold"}
           },
           "y2": {"field": "sum"},
           "color": {
@@ -153,6 +154,6 @@
         }
       }
     ],
-    "config": {"text": {"fontWeight": "bold", "color": "#404040"}}
+    "config": {"title": {"fontWeight": "bold", "fontSize":18}}
   }
   

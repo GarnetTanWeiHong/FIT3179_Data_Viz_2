@@ -9,11 +9,12 @@
     "x": {
       "field": "Year",
       "type": "nominal",
-      "axis":{"labelOverlap":true}
+      "axis":{"labelOverlap":true,  "titleFontSize":15, "labelFontStyle":"bold"}
     },
     "y": {
       "field": "Internet Users(%)",
-      "type": "quantitative"
+      "type": "quantitative",
+      "axis":{ "titleFontSize":15, "labelFontStyle":"bold"}
     },
     "color": {
       "field": "Entity",
@@ -45,6 +46,7 @@
     }
   },
   "layer": [
+    
     {
       "params": [{
     "name": "industry",
@@ -110,6 +112,8 @@
         ]
       }
     }
+    
+    
 
   ],
   "config": {

@@ -65,8 +65,7 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
         <p style="text-align: center; font-weight: bold; font-size: 25px;">The Growth of Internet Users(%) in term of
-          Region and Income
-          Group</p>
+          Region and Income Group</p>
       </div>
 
 
@@ -82,13 +81,22 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
         <p style="text-align: justify; font-size: larger;">
-          <span style="color: #9900cc"><b><em>North America</em></b></span> has a significant lead in internet penetration, with over <b>80%</b> of the population
-          having access to the internet in 2016. Other regions, such as <b><em>Western Sahara</em></b> and <b><em>South Asia</em></b>,
-          have not yet reached this milestone, with internet penetration rates below <b>40%</b>.
+          <strong style="font-size: 25px;"><span style="color: #9900cc"><b><em>North America</em></b></span></strong>
+          has a significant lead in internet penetration, with over <strong style="font-size: 25px;">80%</strong> of the
+          population
+          having access to the internet in 2016. Other regions, such as <strong style="font-size: 25px;"><span
+              style="color: #808080"><b><em>Western Sahara</em></b></span></strong> and <strong
+            style="font-size: 25px;"><span style="color: #ffff00"><b><em>South Asia</em></b></span></strong>
+          have not yet reached this milestone, with internet penetration rates below <strong
+            style="font-size: 25px;">40%</strong>.
           <br>
-          Similarly, <b>high-income countries</b> have a significant advantage in internet penetration compared to other
-          income groups, with over <b>90%</b> of the population in high-income countries having access to the internet,
-          compared to just <b>21%</b> of the population in <b>low-income countries</b>.
+          Similarly,<strong style="font-size: 25px;"><span style="color: #e41a1c"><b><em>High Income
+                  Countries</em></b></span></strong> have a significant advantage in internet penetration compared to
+          other
+          income groups, with over <strong style="font-size: 25px;">90%</strong> of the population in high-income
+          countries having access to the internet,
+          compared to just <strong style="font-size: 25px;">21%</strong> of the population in <strong
+            style="font-size: 25px;"><span style="color: #a65628"><b><em>Low Income Countries</em></b></span></strong>.
         </p>
       </div>
     </div>
@@ -118,13 +126,19 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
         <p style="text-align: justify; font-size: larger;">
-          Moving the slider on the bar chart, we can see that the percentage of internet users has grown rapidly over
-          time. However, the radial chart shows that the countries with the highest number of internet users are not the
-          same as the countries with the highest percentage of internet users.
+          <strong style="font-size: 25px;"><span style="color: #9900cc"><b><em>Moving the
+                  slider</em></b></span></strong>,
+          we can see that the percentage of internet users has <strong style="font-size: 25px;">grown rapidly over
+            time</strong>. However, the radial chart shows that
+          the countries with the highest number of internet users are not the same as the countries with the highest
+          percentage of internet users.
           <br />
-          United State had the highest number of internet users before 2008, but China surpassed it in 2008 and has
-          remained the top country ever since. This is because China has a much larger population than North America.
-
+          <strong style="font-size: 25px;"><span style="color: #0000FF"><b><em>United States</em></b></span></strong>
+          had the
+          highest number of internet users before <b>2008</b>, but <strong style="font-size: 25px;"><span
+              style="color: #ffff00"><b><em>China</em></b></span></strong> surpassed it in 2008 and has remained the top
+          country ever since. This is because China has a much larger population than <strong
+            style="font-size: 25px;"><span style="color: #0000FF"><b><em>United States</em></b></span></strong>.
         </p>
       </div>
     </div>
@@ -137,81 +151,114 @@
 
       <div class="pure-u-1-5">
         <p style="text-align: left; font-size: larger;">
-          Cellular subscriptions have grown significantly over the past decade, but at a slower rate than broadband
-          subscriptions. This trend is likely to slow down even further in the coming years, due to the increasing
-          penetration of broadband and the saturation of the cellular market.
-
+          <strong style="font-size: 22px;">Cellular subscriptions</strong> have grown significantly over the past
+          decade, but at a <strong style="font-size: 22px;">slower rate</strong> than <strong
+            style="font-size: 22px;">broadband subscriptions</strong>. This trend is likely to slow down even further in
+          the coming years, due to the <strong style="font-size: 22px;"><span style="color: blue">increasing penetration of broadband </span></strong> and the
+          <strong style="font-size: 22px;"><span style="color: red">  saturation of the
+          cellular market</span></strong>.
 
           <br />
           <br />
-          An interesting fact that can observe from the bubble chart, there are more people tends to have more than one
-          cellular subscription.
-        </p>
-      </div>
-    </div>
-
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="water_china" class="vis-container"></div>
+          An interesting fact that can be observed from the bubble chart is that there are more people who tend to have
+          <strong style="font-size: 22px;">more than one cellular subscription</strong>.
         </p>
       </div>
     </div>
 
 
-    <!-- end pure grid group -->
-    <script type="text/javascript">
-      var map = "js/choropleth_map.vg.json";
-      vegaEmbed('#mapvis', map).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div id="water_china" class="vis-container"></div>
 
-      var scat_broad_internet = "js/scatter_broadband_internetUser.json";
-      vegaEmbed('#scat_broad_cell', scat_broad_internet).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
+        </div>
+      </div>
 
-      var scat_broad_cell = "js/scatter_cellular_Broadband.vg..json";
-      vegaEmbed('#scat_broad_internet', scat_broad_cell).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <p style="text-align: justify; font-size: larger;">
+            Last but not least, detail of a country shows as above. We can notice that the penetration of Internet in
+            China grows with no block, while United States facing difficulty between 2007 and 2015.
+            We believe that this is affected by the famous collapse of the housing bubble, which led to the Great
+            Recession.
+          </p>
+        </div>
+      </div>
 
-      var bar = "js/bar_internet_users.vg.json";
-      vegaEmbed('#bar', bar).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <p style="text-align: center; font-weight: bold; font-size: 25px;">Conculsion</p>
+        </div>
 
-      var line_region = "js/line_region.vg.json";
-      vegaEmbed('#line_region_vis', line_region).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
-
-      var line_income = "js/line_income.vg.json";
-      vegaEmbed('#line_income_vis', line_income).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
-
-      var radia = "js/radia.vg.json";
-      vegaEmbed('#radia_vis', radia).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
-
-
-      var waterfall = "js/waterfall_china.vg.json";
-      vegaEmbed('#water_china', waterfall).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
-
-
-      var waterfall = "js/test.vg..json";
-      vegaEmbed('#link', waterfall).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <p style="text-align: justify; font-size: larger;">
+              As an author of this website, I hope that you guys can understand more about the internet penetration with
+              more numerical support, instead of staying the stage of surface understanding.
+              This website had gone through from the overall coverage, and thus going more detail in term of years. We
+              also get known of the trend of cellular and broadband subscription.
+            </p>
+          </div>
+        </div>
 
 
 
 
 
-    </script>
+        <!-- end pure grid group -->
+        <script type="text/javascript">
+          var map = "js/choropleth_map.vg.json";
+          vegaEmbed('#mapvis', map).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+          var scat_broad_internet = "js/scatter_broadband_internetUser.json";
+          vegaEmbed('#scat_broad_cell', scat_broad_internet).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+          var scat_broad_cell = "js/scatter_cellular_Broadband.vg..json";
+          vegaEmbed('#scat_broad_internet', scat_broad_cell).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+          var bar = "js/bar_internet_users.vg.json";
+          vegaEmbed('#bar', bar).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+          var line_region = "js/line_region.vg.json";
+          vegaEmbed('#line_region_vis', line_region).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+          var line_income = "js/line_income.vg.json";
+          vegaEmbed('#line_income_vis', line_income).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+          var radia = "js/radia.vg.json";
+          vegaEmbed('#radia_vis', radia).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+
+          var waterfall = "js/waterfall_china.vg.json";
+          vegaEmbed('#water_china', waterfall).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+
+          var waterfall = "js/test.vg..json";
+          vegaEmbed('#link', waterfall).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+
+
+
+
+
+        </script>
 
 
 
@@ -219,7 +266,7 @@
 
 
 
-  </div>
+      </div>
 </body>
 
 </html>

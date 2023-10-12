@@ -18,25 +18,23 @@
   "layer": [
     {
       "params": [{
-      "name": "hover",
-      "value": [{"Entity": "High income"}],
-      "select": {
-        "type": "point",
-        "fields": ["Entity"],
-        "on": "pointerover"
-      }
-    }],
+        "name": "hover",
+        "value":{ "Entity":"High income"},
+        "select": {"type": "point", "fields": ["Entity"]},
+        "bind": "legend"
+      }],
       "mark": {"type": "line", "point": true},
       "encoding": {
         "x": {
           "field": "Year",
           "type": "nominal",
-          "axis": {"labelOverlap": true}
+          "axis": {"labelOverlap": true, "titleFontSize":15, "labelFontStyle":"bold"}
         },
         "y": {
           "field": "Internet Users(%)",
           "type": "quantitative",
-          "scale": {"domain": [0, 100]}
+          "scale": {"domain": [0, 100]},
+          "axis":{ "titleFontSize":15, "labelFontStyle":"bold"}
         },
         "color": {
           "field": "Entity",
@@ -56,7 +54,7 @@
               "#984ea3",
               "#ff7f00",
               "#a6c8e9",
-              "#377eb8",
+              "#5A5A5A",
               "#a65628"
             ]
           }
@@ -79,6 +77,47 @@
           }
         ]
       }
-    }
+    },
+    {
+      "data": {
+        "values": [
+          {"text": "High Income Group has achieved 80% penetration in 2015"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": -270,
+        "dy": -105,
+        "fontWeight":"bold",
+        "color":"orangered",
+        "fontSize": 20
+      },
+      "encoding": {
+        "text": {"field": "text", "type": "nominal"}
+      }
+    } ,
+    {
+      "data": {
+        "values": [
+          {"text": "\u25BC"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 270,
+        "dy": 165,
+        "fontWeight":"bold",
+        "color":"orangered",
+        "fontSize":40,
+        "angle":315
+      },
+      "encoding": {
+        "text": {"field": "text", "type": "nominal"}
+      }
+    }   
   ]
 }

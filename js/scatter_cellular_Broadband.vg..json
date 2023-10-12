@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title":"The change of Broadband Subscription and Cellullar Subscription",
   "width":"container",
-  "height": 450,
+  "height": 520,
   "data": {
     "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/Final.csv"
   },
@@ -34,7 +34,8 @@
         "x": {
           "field": "Broadband Subscription",
           "type": "quantitative",
-          "scale": {"domain": [0, 70]}
+          "scale": {"domain": [0, 70]},
+          "axis":{"titleFontSize":15}
         },
         "y": {
           "field": "Cellular Subscription",
@@ -99,5 +100,6 @@
       "extent": [0,35]}
       ]
     }
-  ]
+  ],
+  "config": {"title": {"fontSize": 18}}
 }
