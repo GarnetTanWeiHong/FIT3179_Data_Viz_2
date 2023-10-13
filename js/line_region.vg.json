@@ -2,6 +2,34 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 875,
   "height":300,
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {"text": "North America widen the gap in 2016 ↠"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": -50,
+        "dy": -95,
+        "fontWeight":"bold",
+        "color":"rebeccapurple",
+        "fontSize": 20
+      },
+      "encoding": {
+        "text": {"field": "text", "type": "nominal"}
+      }
+    } ,
+    
+    
+    
+    
+    
+    
+    {
   "data": {
     "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/data_geo_region_internet.csv"
   },
@@ -115,7 +143,7 @@
     
     
 
-  ],
+  ]}],
   "config": {
     "countTitle": "Count",
     "axisX": {"titleLimit": 150},
