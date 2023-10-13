@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Number of Internet User In China",
+    "title": "",
     "width":"container",
     "data": {
       "url":"https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/waterfall_china_usa.csv",
@@ -79,7 +79,7 @@
           "y": {
             "field": "previous_sum",
             "type": "quantitative",
-            "title": "Amount (million)",
+            "title": "Internet Users (million)",
             "axis":{ "titleFontSize":15, "labelFontStyle":"bold"}
           },
           "y2": {"field": "sum"},

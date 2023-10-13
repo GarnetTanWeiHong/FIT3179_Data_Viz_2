@@ -22,11 +22,12 @@
         "step": 1,
         "name": "Top nth: "
       }
-    }
+    },
+    { "name": "cornerRadius", "value": 5}
   ],
   "hconcat":[
   {
-  "title": "The Top 10 countries which have the highest Internet Users(%)",
+  "title": "Top 10 Countries by Internet Users as a Percentage of Population",
   "width": 500,
   "height": 330,
   "data": {
@@ -75,7 +76,8 @@
         ]
       },
       "layer": [
-        {"mark": "bar",
+        {"mark": {"type": "bar", "cornerRadius": {"expr": "cornerRadius"}},
+
       "encoding": {
         "color": {"field": "Entity", "legend": null,"scale":
         {
@@ -174,7 +176,7 @@
 {
   "width": 500,
   "height":330,
-  "title": "The Top Nth Highest Number of Internet User",
+  "title": "Top N Countries by Number of Internet Users",
   "data": {
       "url": "https://raw.githubusercontent.com/GarnetTanWeiHong/FIT3179_Data_Viz_2/main/data/Final.csv",
       "format": {

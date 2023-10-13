@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title":"The change of Broadband Subscription and Cellullar Subscription",
+  "title":"The Future of Broadband and Cellular Subscription",
   "width":"container",
   "height": 520,
   "data": {
@@ -20,6 +20,7 @@
         "max": 2020,
         "step": 1,
         "name": "Year: "
+
       }
     }
   ],
@@ -35,12 +36,14 @@
           "field": "Broadband Subscription",
           "type": "quantitative",
           "scale": {"domain": [0, 70]},
-          "axis":{"titleFontSize":15}
+          "axis":{"titleFontSize":15},
+          "title":"Broadband Subscriptions per 100 People"
         },
         "y": {
           "field": "Cellular Subscription",
           "type": "quantitative",
-          "scale": {"domain": [0, 200]}
+          "scale": {"domain": [0, 200]},
+          "title":"Cellular Subscriptions per 100 People"
         },
         "size": {
           "field": "Internet Users(%)",
